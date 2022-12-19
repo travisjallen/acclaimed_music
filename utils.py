@@ -27,3 +27,14 @@ def scrape():
             if len(cells) == 5:
                 # Write the data for each row to the CSV file
                 writer.writerow([cells[0].text, cells[1].text, cells[2].text, cells[3].text, cells[4].text])
+
+def plot(data_filename):
+    ## read csv into np array
+
+    ## make histogram
+
+    ## make sns plot of numberline/cluster plot?
+    pass
+
+
+
