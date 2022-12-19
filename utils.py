@@ -1,6 +1,10 @@
 import csv
 import requests
 from bs4 import BeautifulSoup
+import numpy as np
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def scrape():
     # Make an HTTP GET request to the website
@@ -30,11 +34,15 @@ def scrape():
 
 def plot(data_filename):
     ## read csv into np array
+    data = pd.read_csv(data_filename)
+    # print(data.head)
 
     ## make histogram
-
-    ## make sns plot of numberline/cluster plot?
-    pass
+    data_list = data.Year.values[1:]
+    bins_ = np.linspace(int(data_list.min()),int(data_list.max()),16)
+    sns.histplot(data=data_list,bins=bins_)
+    plt.show()
+        
 
 
 
